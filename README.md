@@ -39,22 +39,27 @@ The simulation follows the paper:
 - Sites share how busy they are every five minutes.
 - Each site receives its own five-day job trace.
 
-Results on synthetic traces are in [`results/synthetic.md`](results/synthetic.md):
+The results use Google's real 2011 cluster trace: 578,875 jobs per run, five days per site, as in the paper. Full tables are in [`results/google.md`](results/google.md).
 
 | | Energy (GJ) | Cost ($) |
 | --- | ---: | ---: |
-| DumbSched | 8,504.7 | 153,054 |
-| GeoSched | 8,384.5 | 100,279 |
-| Saving | 1.4% | 34.5% |
+| DumbSched | 23,311.5 | 398,907 |
+| GeoSched | 22,878.5 | 216,695 |
+| Saving | 1.9% | 45.7% |
 
-![Utilisation, energy and cost by site and month](results/synthetic.png)
+| Month | Jan | Mar | May | Jul | Sep | Nov |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Cost saving | 52.8% | 45.7% | 45.5% | 40.0% | 44.8% | 45.2% |
+| Energy saving | 6.1% | 3.6% | 3.0% | −3.6% | −2.0% | 4.6% |
+
+![Utilisation, energy and cost by site and month](results/google.png)
 
 **What the re-run shows:**
-- **Agreement with the paper:** GeoSched lowers cost in every month. Singapore, the most expensive site all year, keeps only its latency-sensitive jobs. Energy can rise at the site that receives more work, as the paper notes.
-- **Larger saving than the paper's:** here every batch job may move, and weekly prices barely change within a five-day run. So GeoSched sends nearly all batch work to the one cheapest site: Oregon in winter and spring, Iowa in summer and autumn. The paper's own runs moved less work (its Fig. 6).
-- **Smaller energy saving:** energy falls 1.4% in total. It rises slightly in July and September, when the cheapest site (Iowa) is warm enough to need chillers.
+- **Agreement with the paper:** GeoSched lowers cost in every month. Singapore, the most expensive site all year, keeps only its latency-sensitive jobs, and its utilisation falls from 26% to 2%. Energy can rise at the site that receives more work, as the paper notes.
+- **Larger cost saving than the paper's:** here every batch job may move, and weekly prices barely change within a five-day run. So GeoSched sends nearly all batch work to the one cheapest site, Oregon or Iowa depending on the week, and fills Oregon to 81% of its CPU in January. The paper's own runs moved less work (its Fig. 6).
+- **Smaller energy saving:** energy falls 1.9% in total. It rises in July and September, when the receiving site is warm enough to need chillers.
 
-The re-run on Google's real cluster trace goes in `results/google.md` when it has been run (see below).
+A second run on synthetic traces matched to the paper's statistics gives the same picture: 34.5% lower cost and 1.4% less energy ([`results/synthetic.md`](results/synthetic.md)).
 
 ## Data
 

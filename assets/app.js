@@ -91,8 +91,9 @@ function drawRes(k) {
         tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y.toLocaleString(undefined, { maximumFractionDigits: 1 })}` } } },
     },
   });
+  const u0 = res.datacenters.flatMap(d => res.series.dumbsched[d].utilization_pct), busy = `${Math.round(Math.min(...u0))}–${Math.round(Math.max(...u0))}%`;
   $('resNote').innerHTML = {
-    utilization_pct: 'Solid lines: GeoSched. Dashed: DumbSched. Run locally, every site is about 15% busy. GeoSched fills the cheapest site with batch jobs (Oregon in winter and spring, Iowa in summer and autumn), and Singapore keeps only its latency-sensitive jobs.',
+    utilization_pct: `Solid lines: GeoSched. Dashed: DumbSched. Run locally, each site is ${busy} busy. GeoSched fills the cheapest site with batch jobs (Oregon or Iowa, whichever is cheaper that week), and Singapore keeps only its latency-sensitive jobs.`,
     job_cost_usd: 'Singapore\'s cost falls the most, because its batch jobs leave. The receiving site\'s cost rises, but by much less than the others save.',
     job_energy_kj: 'Energy moves with the jobs. In July and September it rises slightly overall: the cheapest site (Iowa) is warm enough to need chillers, so GeoSched trades a little extra energy for cheaper power, as the paper also notes.',
   }[k];
@@ -103,7 +104,7 @@ if (!res) { $('rerun').hidden = true; } else {
   $('rerunBig').textContent = `−${(100 * (c0 - c1) / c0).toFixed(1)}%`;
   $('rerunSmall').textContent = `cost ($${Math.round(c0).toLocaleString()} → $${Math.round(c1).toLocaleString()}) and ${e1 <= e0 ? '−' : '+'}${Math.abs(100 * (e0 - e1) / e0).toFixed(1)}% energy.`;
   $('resIntro').textContent = res.source === 'google'
-    ? 'Jobs from Google\'s 2011 cluster trace, five days per site, as in the paper. Weekly prices and temperatures from the paper.'
+    ? 'Real jobs from Google\'s 2011 cluster trace, five days per site, as in the paper (about 580,000 jobs per run). Weekly prices and temperatures from the paper. The saving is larger than the paper\'s because every batch job here is free to move to the single cheapest site.'
     : 'Synthetic jobs generated to match the paper\'s trace statistics (Table II, Figs 1–2); weekly prices and temperatures from the paper. The savings are larger than the paper\'s because every batch job here is free to move.';
   document.querySelectorAll('#resChips .chip').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('#resChips .chip').forEach(x => x.setAttribute('aria-pressed', x === b));
