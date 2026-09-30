@@ -1,0 +1,1 @@
+{ "name": "geosched", "private": true, "type": "module", "scripts": { "test": "node --test tests/geo.test.mjs" } }
