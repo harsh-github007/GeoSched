@@ -1,0 +1,737 @@
+{
+ "source": "google",
+ "runs": [
+  {
+   "month": 1,
+   "scheduler": "dumbsched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 110622,
+     "moved_in": 0,
+     "utilization_pct": 34.699296730645194,
+     "job_energy_kj": 879373571.1880715,
+     "job_cost_usd": 7770.242583192452,
+     "dynamic_energy_kj": 255017396.85779732,
+     "dynamic_cost_usd": 2253.3620539018166,
+     "cooling_energy_kj": 41874931.96133695,
+     "idle_energy_kj": 1208208960.0
+    },
+    "Oregon": {
+     "jobs": 108783,
+     "moved_in": 0,
+     "utilization_pct": 29.63435713381345,
+     "job_energy_kj": 754021046.422938,
+     "job_cost_usd": 6222.76813589601,
+     "dynamic_energy_kj": 231637536.05383214,
+     "dynamic_cost_usd": 1911.65311004425,
+     "cooling_energy_kj": 62258618.51198613,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Singapore": {
+     "jobs": 104388,
+     "moved_in": 0,
+     "utilization_pct": 26.165291587985653,
+     "job_energy_kj": 803736262.9713775,
+     "job_cost_usd": 30834.44868860511,
+     "dynamic_energy_kj": 286265423.37435985,
+     "dynamic_cost_usd": 10982.25489506501,
+     "cooling_energy_kj": 191639547.68035087,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 142943,
+     "moved_in": 0,
+     "utilization_pct": 27.34797777002035,
+     "job_energy_kj": 847038516.154093,
+     "job_cost_usd": 17293.703038146148,
+     "dynamic_energy_kj": 269892631.8662005,
+     "dynamic_cost_usd": 5510.307900601543,
+     "cooling_energy_kj": 201964357.69052932,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Finland": {
+     "jobs": 112139,
+     "moved_in": 0,
+     "utilization_pct": 22.348776474612823,
+     "job_energy_kj": 568492773.444324,
+     "job_cost_usd": 8140.3760118648415,
+     "dynamic_energy_kj": 185363054.29893827,
+     "dynamic_cost_usd": 2654.2313817220606,
+     "cooling_energy_kj": 46939770.284394056,
+     "idle_energy_kj": 1254235968.0
+    }
+   }
+  },
+  {
+   "month": 1,
+   "scheduler": "geosched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 30610,
+     "moved_in": 280,
+     "utilization_pct": 12.149735515975879,
+     "job_energy_kj": 383985125.8676137,
+     "job_cost_usd": 3392.9352371802415,
+     "dynamic_energy_kj": 114731164.94964145,
+     "dynamic_cost_usd": 1013.7773214022513,
+     "cooling_energy_kj": 18285005.99369603,
+     "idle_energy_kj": 1208208960.0
+    },
+    "Oregon": {
+     "jobs": 436383,
+     "moved_in": 327674,
+     "utilization_pct": 80.85606862556124,
+     "job_energy_kj": 3056889681.6008587,
+     "job_cost_usd": 24939.894452236767,
+     "dynamic_energy_kj": 975617735.9333746,
+     "dynamic_cost_usd": 7964.748636154923,
+     "cooling_energy_kj": 252403735.1780541,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Singapore": {
+     "jobs": 29469,
+     "moved_in": 0,
+     "utilization_pct": 2.0254702682829127,
+     "job_energy_kj": 78480503.44929941,
+     "job_cost_usd": 3010.8173142729497,
+     "dynamic_energy_kj": 27256249.292968124,
+     "dynamic_cost_usd": 1045.6557194032832,
+     "cooling_energy_kj": 18712566.392298326,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 49405,
+     "moved_in": 0,
+     "utilization_pct": 1.9574203604464682,
+     "job_energy_kj": 71907523.47003736,
+     "job_cost_usd": 1468.1119375132537,
+     "dynamic_energy_kj": 22165028.996684983,
+     "dynamic_cost_usd": 452.5360086823234,
+     "cooling_energy_kj": 17145332.25322776,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Finland": {
+     "jobs": 33008,
+     "moved_in": 0,
+     "utilization_pct": 1.1521843676809866,
+     "job_energy_kj": 25362936.935050555,
+     "job_cost_usd": 364.45131323616,
+     "dynamic_energy_kj": 7658011.25945494,
+     "dynamic_cost_usd": 110.04136734766848,
+     "cooling_energy_kj": 2094187.4533528278,
+     "idle_energy_kj": 1254235968.0
+    }
+   }
+  },
+  {
+   "month": 3,
+   "scheduler": "dumbsched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 110622,
+     "moved_in": 0,
+     "utilization_pct": 34.699296730645194,
+     "job_energy_kj": 912873516.757141,
+     "job_cost_usd": 8066.251824456824,
+     "dynamic_energy_kj": 264732345.30952257,
+     "dynamic_cost_usd": 2339.204417859966,
+     "cooling_energy_kj": 75374877.53040633,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Oregon": {
+     "jobs": 108783,
+     "moved_in": 0,
+     "utilization_pct": 29.63435713381345,
+     "job_energy_kj": 754021046.422938,
+     "job_cost_usd": 6694.369994204118,
+     "dynamic_energy_kj": 231637536.05383214,
+     "dynamic_cost_usd": 2053.27948866924,
+     "cooling_energy_kj": 62258618.51198613,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Singapore": {
+     "jobs": 104388,
+     "moved_in": 0,
+     "utilization_pct": 26.165291587985653,
+     "job_energy_kj": 803736262.9713775,
+     "job_cost_usd": 26831.34591343465,
+     "dynamic_energy_kj": 286265423.37435985,
+     "dynamic_cost_usd": 9555.705260856645,
+     "cooling_energy_kj": 191639547.68035087,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 142943,
+     "moved_in": 0,
+     "utilization_pct": 27.34797777002035,
+     "job_energy_kj": 717112131.5496981,
+     "job_cost_usd": 14641.039352472953,
+     "dynamic_energy_kj": 228283531.37938538,
+     "dynamic_cost_usd": 4660.78876566249,
+     "cooling_energy_kj": 72037973.08613439,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Finland": {
+     "jobs": 112139,
+     "moved_in": 0,
+     "utilization_pct": 22.348776474612823,
+     "job_energy_kj": 568492773.444324,
+     "job_cost_usd": 8298.65949361148,
+     "dynamic_energy_kj": 185363054.29893827,
+     "dynamic_cost_usd": 2705.815546084033,
+     "cooling_energy_kj": 46939770.284394056,
+     "idle_energy_kj": 1254235968.0
+    }
+   }
+  },
+  {
+   "month": 3,
+   "scheduler": "geosched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 108731,
+     "moved_in": 62526,
+     "utilization_pct": 14.290389605204357,
+     "job_energy_kj": 1010811818.5244871,
+     "job_cost_usd": 8931.645540906658,
+     "dynamic_energy_kj": 302928940.4955231,
+     "dynamic_cost_usd": 2676.7137769895935,
+     "cooling_energy_kj": 83461526.3001885,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Oregon": {
+     "jobs": 358262,
+     "moved_in": 267099,
+     "utilization_pct": 80.85606862556124,
+     "job_energy_kj": 2444690993.7389045,
+     "job_cost_usd": 21892.19168457062,
+     "dynamic_energy_kj": 791790671.4331822,
+     "dynamic_cost_usd": 7073.984214321197,
+     "cooling_energy_kj": 201855219.66651845,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Singapore": {
+     "jobs": 29469,
+     "moved_in": 0,
+     "utilization_pct": 2.0254702682829127,
+     "job_energy_kj": 78480503.44929941,
+     "job_cost_usd": 2623.369396104375,
+     "dynamic_energy_kj": 27256249.292968124,
+     "dynamic_cost_usd": 911.3998049425669,
+     "cooling_energy_kj": 18712566.392298326,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 49405,
+     "moved_in": 0,
+     "utilization_pct": 1.9574203604464682,
+     "job_energy_kj": 60485122.8759098,
+     "job_cost_usd": 1234.9045920498033,
+     "dynamic_energy_kj": 18666507.539079312,
+     "dynamic_cost_usd": 381.10786225620717,
+     "cooling_energy_kj": 5722931.659100205,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Finland": {
+     "jobs": 33008,
+     "moved_in": 0,
+     "utilization_pct": 1.1521843676809866,
+     "job_energy_kj": 25362936.935050555,
+     "job_cost_usd": 370.71778643542217,
+     "dynamic_energy_kj": 7658011.25945494,
+     "dynamic_cost_usd": 111.96717489509848,
+     "cooling_energy_kj": 2094187.4533528278,
+     "idle_energy_kj": 1254235968.0
+    }
+   }
+  },
+  {
+   "month": 5,
+   "scheduler": "dumbsched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 110622,
+     "moved_in": 0,
+     "utilization_pct": 34.699296730645194,
+     "job_energy_kj": 979873407.89528,
+     "job_cost_usd": 8658.270306985884,
+     "dynamic_energy_kj": 284162242.2129735,
+     "dynamic_cost_usd": 2510.8891457763284,
+     "cooling_energy_kj": 142374768.66854542,
+     "idle_energy_kj": 1346289984.0
+    },
+    "Oregon": {
+     "jobs": 108783,
+     "moved_in": 0,
+     "utilization_pct": 29.63435713381345,
+     "job_energy_kj": 760938670.7020471,
+     "job_cost_usd": 6734.307235713171,
+     "dynamic_energy_kj": 233762651.06349993,
+     "dynamic_cost_usd": 2068.7994619119745,
+     "cooling_energy_kj": 69176242.79109524,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Singapore": {
+     "jobs": 104388,
+     "moved_in": 0,
+     "utilization_pct": 26.165291587985653,
+     "job_energy_kj": 803736262.9713775,
+     "job_cost_usd": 29343.071400646466,
+     "dynamic_energy_kj": 286265423.37435985,
+     "dynamic_cost_usd": 10451.073498359108,
+     "cooling_energy_kj": 191639547.68035087,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 142943,
+     "moved_in": 0,
+     "utilization_pct": 27.34797777002035,
+     "job_energy_kj": 709581574.3099209,
+     "job_cost_usd": 14487.290475494145,
+     "dynamic_energy_kj": 226094604.86378372,
+     "dynamic_cost_usd": 4616.098182635635,
+     "cooling_energy_kj": 64507415.84635724,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Finland": {
+     "jobs": 112139,
+     "moved_in": 0,
+     "utilization_pct": 22.348776474612823,
+     "job_energy_kj": 569749990.9068518,
+     "job_cost_usd": 6411.58230601339,
+     "dynamic_energy_kj": 185774036.86388892,
+     "dynamic_cost_usd": 2090.688519541515,
+     "cooling_energy_kj": 48196987.746921964,
+     "idle_energy_kj": 1254235968.0
+    }
+   }
+  },
+  {
+   "month": 5,
+   "scheduler": "geosched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 30610,
+     "moved_in": 280,
+     "utilization_pct": 12.149735515975879,
+     "job_energy_kj": 427869140.25248426,
+     "job_cost_usd": 3780.699264286566,
+     "dynamic_energy_kj": 127843298.08674343,
+     "dynamic_cost_usd": 1129.6375867053607,
+     "cooling_energy_kj": 62169020.37856667,
+     "idle_energy_kj": 1346289984.0
+    },
+    "Oregon": {
+     "jobs": 436383,
+     "moved_in": 327674,
+     "utilization_pct": 80.85606862556124,
+     "job_energy_kj": 3117218004.2631083,
+     "job_cost_usd": 27615.713245434374,
+     "dynamic_energy_kj": 994306927.3992065,
+     "dynamic_cost_usd": 8806.927583221732,
+     "cooling_energy_kj": 312732057.8403036,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Singapore": {
+     "jobs": 29469,
+     "moved_in": 0,
+     "utilization_pct": 2.0254702682829127,
+     "job_energy_kj": 78480503.44929941,
+     "job_cost_usd": 2865.1923800948057,
+     "dynamic_energy_kj": 27256249.292968124,
+     "dynamic_cost_usd": 995.0802346041065,
+     "cooling_energy_kj": 18712566.392298326,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 49405,
+     "moved_in": 0,
+     "utilization_pct": 1.9574203604464682,
+     "job_energy_kj": 60238410.33849056,
+     "job_cost_usd": 1229.8675444108333,
+     "dynamic_energy_kj": 18568100.352158543,
+     "dynamic_cost_usd": 379.09871552324086,
+     "cooling_energy_kj": 5476219.1216809675,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Finland": {
+     "jobs": 33008,
+     "moved_in": 0,
+     "utilization_pct": 1.1521843676809866,
+     "job_energy_kj": 25362936.935050555,
+     "job_cost_usd": 279.4150219011423,
+     "dynamic_energy_kj": 7658011.25945494,
+     "dynamic_cost_usd": 84.36575737499581,
+     "cooling_energy_kj": 2094187.4533528278,
+     "idle_energy_kj": 1254235968.0
+    }
+   }
+  },
+  {
+   "month": 7,
+   "scheduler": "dumbsched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 110622,
+     "moved_in": 0,
+     "utilization_pct": 34.699296730645194,
+     "job_energy_kj": 1099708607.6759355,
+     "job_cost_usd": 9717.14744726988,
+     "dynamic_energy_kj": 318914322.2177292,
+     "dynamic_cost_usd": 2817.9623860405113,
+     "cooling_energy_kj": 262209968.44920093,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Oregon": {
+     "jobs": 108783,
+     "moved_in": 0,
+     "utilization_pct": 29.63435713381345,
+     "job_energy_kj": 908344277.6012948,
+     "job_cost_usd": 10710.963381851829,
+     "dynamic_energy_kj": 279046097.38723695,
+     "dynamic_cost_usd": 3290.3713768117123,
+     "cooling_energy_kj": 216581849.6903429,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Singapore": {
+     "jobs": 104388,
+     "moved_in": 0,
+     "utilization_pct": 26.165291587985653,
+     "job_energy_kj": 803736262.9713775,
+     "job_cost_usd": 28496.375859523647,
+     "dynamic_energy_kj": 286265423.37435985,
+     "dynamic_cost_usd": 10028.6020374184,
+     "cooling_energy_kj": 191639547.68035087,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 142943,
+     "moved_in": 0,
+     "utilization_pct": 27.34797777002035,
+     "job_energy_kj": 709581574.3099209,
+     "job_cost_usd": 13521.471110461374,
+     "dynamic_energy_kj": 226094604.86378372,
+     "dynamic_cost_usd": 4308.358303793224,
+     "cooling_energy_kj": 64507415.84635724,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Finland": {
+     "jobs": 112139,
+     "moved_in": 0,
+     "utilization_pct": 22.348776474612823,
+     "job_energy_kj": 661203216.3246315,
+     "job_cost_usd": 7599.616175086406,
+     "dynamic_energy_kj": 215625595.76089764,
+     "dynamic_cost_usd": 2478.351723184014,
+     "cooling_energy_kj": 139650213.16470158,
+     "idle_energy_kj": 1510936690.2943017
+    }
+   }
+  },
+  {
+   "month": 7,
+   "scheduler": "geosched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 436072,
+     "moved_in": 325609,
+     "utilization_pct": 80.33518606909861,
+     "job_energy_kj": 3896598557.9227853,
+     "job_cost_usd": 34430.777813201355,
+     "dynamic_energy_kj": 1240733416.203049,
+     "dynamic_cost_usd": 10963.258324838438,
+     "cooling_energy_kj": 929088831.1690139,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Oregon": {
+     "jobs": 30173,
+     "moved_in": 0,
+     "utilization_pct": 2.1090071635635543,
+     "job_energy_kj": 76792153.53060894,
+     "job_cost_usd": 905.8721647676118,
+     "dynamic_energy_kj": 19313316.665311176,
+     "dynamic_cost_usd": 227.8334419445322,
+     "cooling_energy_kj": 18310003.226182286,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Singapore": {
+     "jobs": 29469,
+     "moved_in": 0,
+     "utilization_pct": 2.0254702682829127,
+     "job_energy_kj": 78480503.44929941,
+     "job_cost_usd": 3029.754873546957,
+     "dynamic_energy_kj": 27256249.292968124,
+     "dynamic_cost_usd": 1053.7527947768508,
+     "cooling_energy_kj": 18712566.392298326,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 49405,
+     "moved_in": 0,
+     "utilization_pct": 1.9574203604464682,
+     "job_energy_kj": 60238410.33849056,
+     "job_cost_usd": 1147.876374783442,
+     "dynamic_energy_kj": 18568100.352158543,
+     "dynamic_cost_usd": 353.8254678216859,
+     "cooling_energy_kj": 5476219.1216809675,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Finland": {
+     "jobs": 33756,
+     "moved_in": 585,
+     "utilization_pct": 9.526469431268337,
+     "job_energy_kj": 218983266.80593207,
+     "job_cost_usd": 2509.502136136153,
+     "dynamic_energy_kj": 67732664.70307603,
+     "dynamic_cost_usd": 776.2220981149835,
+     "cooling_energy_kj": 51520328.08573668,
+     "idle_energy_kj": 1510936690.2943017
+    }
+   }
+  },
+  {
+   "month": 9,
+   "scheduler": "dumbsched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 110622,
+     "moved_in": 0,
+     "utilization_pct": 34.699296730645194,
+     "job_energy_kj": 1013435822.1203512,
+     "job_cost_usd": 8954.831528235694,
+     "dynamic_energy_kj": 294603464.3071302,
+     "dynamic_cost_usd": 2603.1489443360797,
+     "cooling_energy_kj": 175937182.89361662,
+     "idle_energy_kj": 1346289984.0
+    },
+    "Oregon": {
+     "jobs": 108783,
+     "moved_in": 0,
+     "utilization_pct": 29.63435713381345,
+     "job_energy_kj": 809362040.6558133,
+     "job_cost_usd": 6918.270780108509,
+     "dynamic_energy_kj": 248638456.1311773,
+     "dynamic_cost_usd": 2120.085655207181,
+     "cooling_energy_kj": 117599612.74486144,
+     "idle_energy_kj": 1346289984.0
+    },
+    "Singapore": {
+     "jobs": 104388,
+     "moved_in": 0,
+     "utilization_pct": 26.165291587985653,
+     "job_energy_kj": 803736262.9713775,
+     "job_cost_usd": 27128.050771310867,
+     "dynamic_energy_kj": 286265423.37435985,
+     "dynamic_cost_usd": 9642.229584180688,
+     "cooling_energy_kj": 191639547.68035087,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 142943,
+     "moved_in": 0,
+     "utilization_pct": 27.34797777002035,
+     "job_energy_kj": 709581574.3099209,
+     "job_cost_usd": 13521.471110461374,
+     "dynamic_energy_kj": 226094604.86378372,
+     "dynamic_cost_usd": 4308.358303793224,
+     "cooling_energy_kj": 64507415.84635724,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Finland": {
+     "jobs": 112139,
+     "moved_in": 0,
+     "utilization_pct": 22.348776474612823,
+     "job_energy_kj": 573708303.4759226,
+     "job_cost_usd": 8511.188235082827,
+     "dynamic_energy_kj": 187063632.7787448,
+     "dynamic_cost_usd": 2769.561740062474,
+     "cooling_energy_kj": 52155300.31599269,
+     "idle_energy_kj": 1265742720.0
+    }
+   }
+  },
+  {
+   "month": 9,
+   "scheduler": "geosched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 188855,
+     "moved_in": 126438,
+     "utilization_pct": 58.90004450748284,
+     "job_energy_kj": 1683571775.052862,
+     "job_cost_usd": 14876.227267897382,
+     "dynamic_energy_kj": 557669100.4805279,
+     "dynamic_cost_usd": 4927.626135079315,
+     "cooling_energy_kj": 343454846.21802044,
+     "idle_energy_kj": 1346289984.0
+    },
+    "Oregon": {
+     "jobs": 278137,
+     "moved_in": 198170,
+     "utilization_pct": 50.458683763901426,
+     "job_energy_kj": 2130849878.428978,
+     "job_cost_usd": 16660.46029499197,
+     "dynamic_energy_kj": 657113531.1529623,
+     "dynamic_cost_usd": 5131.051810585948,
+     "cooling_energy_kj": 309610666.0965111,
+     "idle_energy_kj": 1346289984.0
+    },
+    "Singapore": {
+     "jobs": 29469,
+     "moved_in": 0,
+     "utilization_pct": 2.0254702682829127,
+     "job_energy_kj": 78480503.44929941,
+     "job_cost_usd": 2695.5424980075386,
+     "dynamic_energy_kj": 27256249.292968124,
+     "dynamic_cost_usd": 938.6139231731665,
+     "cooling_energy_kj": 18712566.392298326,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 49405,
+     "moved_in": 0,
+     "utilization_pct": 1.9574203604464682,
+     "job_energy_kj": 60238410.33849056,
+     "job_cost_usd": 1147.876374783442,
+     "dynamic_energy_kj": 18568100.352158543,
+     "dynamic_cost_usd": 353.8254678216859,
+     "cooling_energy_kj": 5476219.1216809675,
+     "idle_energy_kj": 1265742720.0
+    },
+    "Finland": {
+     "jobs": 33009,
+     "moved_in": 0,
+     "utilization_pct": 1.8153852714156016,
+     "job_energy_kj": 35308542.07223581,
+     "job_cost_usd": 519.0361444572816,
+     "dynamic_energy_kj": 9046768.72785995,
+     "dynamic_cost_usd": 133.75122699354452,
+     "cooling_energy_kj": 3209867.4611123595,
+     "idle_energy_kj": 1265742720.0
+    }
+   }
+  },
+  {
+   "month": 11,
+   "scheduler": "dumbsched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 110622,
+     "moved_in": 0,
+     "utilization_pct": 34.699296730645194,
+     "job_energy_kj": 912873516.757141,
+     "job_cost_usd": 8066.251824456824,
+     "dynamic_energy_kj": 264732345.30952257,
+     "dynamic_cost_usd": 2339.204417859966,
+     "cooling_energy_kj": 75374877.53040633,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Oregon": {
+     "jobs": 108783,
+     "moved_in": 0,
+     "utilization_pct": 29.63435713381345,
+     "job_energy_kj": 754021046.422938,
+     "job_cost_usd": 7631.192902585631,
+     "dynamic_energy_kj": 231637536.05383214,
+     "dynamic_cost_usd": 2339.6427386080136,
+     "cooling_energy_kj": 62258618.51198613,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Singapore": {
+     "jobs": 104388,
+     "moved_in": 0,
+     "utilization_pct": 26.165291587985653,
+     "job_energy_kj": 803736262.9713775,
+     "job_cost_usd": 25391.05092050409,
+     "dynamic_energy_kj": 286265423.37435985,
+     "dynamic_cost_usd": 9036.25337114145,
+     "cooling_energy_kj": 191639547.68035087,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 142943,
+     "moved_in": 0,
+     "utilization_pct": 27.34797777002035,
+     "job_energy_kj": 747206208.1625916,
+     "job_cost_usd": 15608.307459396327,
+     "dynamic_energy_kj": 238293516.83951348,
+     "dynamic_cost_usd": 4977.686796203111,
+     "cooling_energy_kj": 102132049.69902779,
+     "idle_energy_kj": 1346289984.0
+    },
+    "Finland": {
+     "jobs": 112139,
+     "moved_in": 0,
+     "utilization_pct": 22.348776474612823,
+     "job_energy_kj": 568492773.444324,
+     "job_cost_usd": 6703.4518061237595,
+     "dynamic_energy_kj": 185363054.29893827,
+     "dynamic_cost_usd": 2185.5753215337895,
+     "cooling_energy_kj": 46939770.284394056,
+     "idle_energy_kj": 1254235968.0
+    }
+   }
+  },
+  {
+   "month": 11,
+   "scheduler": "geosched",
+   "datacenters": {
+    "Iowa": {
+     "jobs": 436072,
+     "moved_in": 325609,
+     "utilization_pct": 80.33518606909861,
+     "job_energy_kj": 3224751078.623397,
+     "job_cost_usd": 28494.25883639244,
+     "dynamic_energy_kj": 1027036439.1771247,
+     "dynamic_cost_usd": 9075.008091728876,
+     "cooling_energy_kj": 257241351.86962542,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Oregon": {
+     "jobs": 30921,
+     "moved_in": 610,
+     "utilization_pct": 10.483276627172513,
+     "job_energy_kj": 220917210.10178676,
+     "job_cost_usd": 2132.3200871825156,
+     "dynamic_energy_kj": 64780708.930562295,
+     "dynamic_cost_usd": 625.0449342383498,
+     "cooling_energy_kj": 18240870.55886313,
+     "idle_energy_kj": 1254235968.0
+    },
+    "Singapore": {
+     "jobs": 29469,
+     "moved_in": 0,
+     "utilization_pct": 2.0254702682829127,
+     "job_energy_kj": 78480503.44929941,
+     "job_cost_usd": 2511.5160343871494,
+     "dynamic_energy_kj": 27256249.292968124,
+     "dynamic_cost_usd": 875.1067513733847,
+     "cooling_energy_kj": 18712566.392298326,
+     "idle_energy_kj": 1510936690.2943017
+    },
+    "Chile": {
+     "jobs": 49405,
+     "moved_in": 0,
+     "utilization_pct": 1.9574203604464682,
+     "job_energy_kj": 63825051.186247855,
+     "job_cost_usd": 1333.2344025571645,
+     "dynamic_energy_kj": 19651299.551284265,
+     "dynamic_cost_usd": 410.49381284905263,
+     "cooling_energy_kj": 9062859.96943826,
+     "idle_energy_kj": 1346289984.0
+    },
+    "Finland": {
+     "jobs": 33008,
+     "moved_in": 0,
+     "utilization_pct": 1.1521843676809866,
+     "job_energy_kj": 25362936.935050555,
+     "job_cost_usd": 300.5675866112054,
+     "dynamic_energy_kj": 7658011.25945494,
+     "dynamic_cost_usd": 90.85805379902307,
+     "cooling_energy_kj": 2094187.4533528278,
+     "idle_energy_kj": 1254235968.0
+    }
+   }
+  }
+ ]
+}
