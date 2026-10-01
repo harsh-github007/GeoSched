@@ -21,18 +21,24 @@ function drawSites() {
   $('hVal').textContent = `${hours} h`;
   const rows = jobCost(week(temp, price, w), cores, util, hours).sort((a, b) => a.cost - b.cost);
   const worst = rows[rows.length - 1].cost;
-  $('sites').innerHTML = rows.map((r, i) => `
-    <div class="site${i === 0 ? ' best' : ''}">
-      <div class="site-top"><span class="dot" style="background:${COLOR[r.dc]}"></span><b>${r.dc}</b>${i === 0 ? '<span class="tag">GeoSched sends it here</span>' : ''}</div>
+  const available = new Set([...document.querySelectorAll('.siteAvailable:checked')].map(x => x.value));
+  const klass = +$('jobClass').value, origin = $('origin').value;
+  const eligible = rows.filter(r => available.has(r.dc));
+  const destination = klass >= 2 ? (available.has(origin) ? origin : null) : eligible[0]?.dc;
+  $('sites').innerHTML = rows.map(r => `
+    <div class="site${r.dc === destination ? ' best' : ''}${available.has(r.dc) ? '' : ' unavailable'}">
+      <div class="site-top"><span class="dot" style="background:${COLOR[r.dc]}"></span><b>${r.dc}</b>${r.dc === destination ? '<span class="tag">'+(klass >= 2 ? 'Stays at arrival site' : 'Selected destination')+'</span>' : !available.has(r.dc) ? '<span class="tag">No shared capacity</span>' : ''}</div>
       <div class="site-cost">${money(r.cost)}</div>
       <div class="bar"><i style="width:${(100 * r.cost / worst).toFixed(1)}%;background:${COLOR[r.dc]}"></i></div>
       <div class="site-meta"><span>${r.temp.toFixed(0)}°F · ${r.mode}</span><span>$${r.price.toFixed(0)}/MWh + ${(100 * r.overhead).toFixed(0)}% cooling</span></div>
     </div>`).join('');
-  const best = rows[0], local = rows.find(r => r.dc === 'Singapore');
-  $('siteNote').innerHTML = `In the week from ${weekLabel(w)}, the job costs <b>${money(best.cost)}</b> in ${best.dc} and <b>${money(local.cost)}</b> in Singapore, ${(local.cost / best.cost).toFixed(1)}× as much. `
-    + `If it is a batch job (classes 0–1), GeoSched runs it in ${best.dc}. If it is latency-sensitive (classes 2–3), it stays where it arrived.`;
+  const chosen = rows.find(r => r.dc === destination);
+  $('siteNote').textContent = destination
+    ? `${klass >= 2 ? 'Latency-sensitive work stays in' : 'This batch job selects'} ${destination}. Its modeled incremental cost is ${money(chosen.cost)}. ${klass >= 2 ? 'The cheapest remote site does not override the class policy.' : 'Unavailable sites are excluded, even if their price is lower.'} This illustration excludes site-wide idle energy and task fragmentation; the Python engine includes both.`
+    : `${klass >= 2 ? origin + ' has no shared capacity; latency-sensitive work queues locally.' : 'No site has shared capacity; the new simulator falls back to the local queue.'} A lower price does not justify sending a job to a site that cannot host it.`;
 }
-['w', 'c', 'u', 'h'].forEach(id => $(id).addEventListener('input', drawSites));
+['w', 'c', 'u', 'h','jobClass','origin'].forEach(id => $(id).addEventListener('input', drawSites));
+document.querySelectorAll('.siteAvailable').forEach(x => x.addEventListener('change',drawSites));
 drawSites();
 
 // ---------- 2. The year ----------
@@ -67,3 +73,25 @@ document.querySelectorAll('#yearChips .chip').forEach(b => b.addEventListener('c
   drawYear(b.dataset.m);
 }));
 drawYear('effective');
+
+// ---------- Saved independent simulator demonstration ----------
+try {
+ const response=await fetch('results/demo.json');
+ if(!response.ok) throw new Error('Experiment data unavailable');
+ const demo=await response.json();
+ const controls=$('demoMonths');
+ const render=(index)=>{
+  const exp=demo.experiments[index];
+  controls.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
+  $('demoStatus').textContent=`${exp.start.slice(0,10)} · ${demo.source} · ${demo.capacity}`;
+  const local=exp.runs.local.sites, geo=exp.runs.geosched.sites;
+  $('demoRows').innerHTML=DCS.map(n=>`<tr><th>${n}</th><td>$${local[n].cost_usd.toFixed(3)}</td><td>$${geo[n].cost_usd.toFixed(3)}</td><td>${(local[n].energy_j/1e6).toFixed(2)} MJ</td><td>${(geo[n].energy_j/1e6).toFixed(2)} MJ</td><td>${geo[n].completed}</td></tr>`).join('');
+  const status=(run)=>{
+   const sites=Object.values(run.sites);
+   return ['completed','queued','running','rejected'].map(k=>`${sites.reduce((a,s)=>a+s[k],0)} ${k}`).join(' · ');
+  };
+  $('demoAccounting').textContent=`Local: ${status(exp.runs.local)}. GeoSched: ${status(exp.runs.geosched)}. Both received ${exp.runs.local.arrived_jobs} jobs in the same ${exp.runs.local.horizon_s}-second window. All site energy includes idle power.`;
+ };
+ demo.experiments.forEach((exp,i)=>{const button=document.createElement('button');button.className='chip';button.textContent=new Date(exp.start).toLocaleString('en-US',{month:'short',timeZone:'UTC'});button.addEventListener('click',()=>render(i));controls.append(button);});
+ render(0);
+} catch(error) { $('demoStatus').textContent='The saved demonstration could not load. Run python3 -m simulator.run --all-months to generate it.'; }

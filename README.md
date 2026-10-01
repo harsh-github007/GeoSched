@@ -1,48 +1,48 @@
-# GeoSched: original simulator and interactive explainer
+# GeoSched — paper-informed simulator and interactive explainer
 
-An interactive explanation of **Reducing Cloud Workload Costs in Geographically Distributed Data Centers with GeoSched** by Vishnuvajjhula Pranav Sai and Harsh Raj (IEEE, 2023).
+A new independent implementation of the method described in **Reducing Cloud Workload Costs in Geographically Distributed Data Centers with GeoSched**, by Vishnuvajjhula Pranav Sai and Harsh Raj (IEEE, 2023).
 
-- [Interactive explainer](https://harsh-github007.github.io/GeoSched/)
-- [Published paper](https://ieeexplore.ieee.org/document/10307394)
-- [Preprint](paper/preprint.pdf)
-- [Original upstream source](https://bitbucket.org/anirudhnair/geosched/src/util/)
+[Explainer](https://harsh-github007.github.io/GeoSched/) · [Paper](https://ieeexplore.ieee.org/document/10307394) · [Preprint](paper/preprint.pdf) · [Model specification](MODEL.md)
 
-## Original source
+## What is implemented
 
-`original/` contains the C++ simulator, trace processor, data-center inputs and five bundled one-day workload CSVs from Anirudh Jayakumar's original GeoSched repository, **util branch**, commit `44a629e3fd173c71fe0f1d285d79d354bfd772bb`. Source files retain upstream author headers. Unrelated binaries, generated logs, presentations and large unused archives are omitted.
+A discrete-time simulator with individual task-to-node placement, atomic resource reservations, stale per-node snapshots, latency-class routing, queues, job completion, and whole-site IT/cooling/cost accounting. Five-second steps and five-minute sharing follow the paper. Power constants, queue policy, profile interpolation and other unspecified choices are documented in `MODEL.md`.
 
-The default upstream `master` branch selects destinations randomly. The `util` branch includes the cost-aware scheduler (`GEO`) and a cooling load balancer (`LOAD`). The upstream Makefile defaults to `LOAD`; the build helper below explicitly selects `GEO`.
+The implementation prevents pooled capacity from masking machine fragmentation, avoids counting idle power per job, clips energy to the run window, and reports unserved work.
 
-The previous Python reimplementation, its trace-generation scripts and its reported Google/synthetic results were removed. They must not be attributed to this original simulator.
+## Run locally
 
-## Build and run
-
-Requires a C++11 compiler and POSIX threads. The cost-aware source compiled with Apple Clang on an M1 Max.
+Python 3.9+; the simulator uses only the standard library.
 
 ```bash
-bash build-original.sh
-cd original/src/GeoSim
-./GeoSim
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+python3 -m simulator.run --all-months --output results/demo.json
+python3 -m http.server 4175
 ```
 
-Run from that directory: upstream paths refer to `../../datacenters/` and `../../workloads/`. The simulator writes site trace logs in its current directory. Building does not launch the experiment automatically.
+The included result is a **synthetic demonstration**: 500 jobs, 8 machines per site, one-hour windows, six seasonal profiles. It is not the paper's Google trace and does not establish reproduction of the paper's reported savings.
 
-### Settings and limits
-
-- `DataCenter.cpp` defines `MAX_TIME` as 24 hours and `TIMEINC` as five minutes.
-- `main.cpp` selects five bundled `5_*_1day.csv` workloads.
-- These defaults are **not** the six five-day runs described in the 2023 paper. The XML configuration alone does not change all hardcoded settings.
-- The cost-aware branch checks per-task/node fit, keeps latency-sensitive work local and drops a batch job when no site passes the fit check.
-- Historical implementation quirks are retained: the feasibility check does not reserve capacity while checking multiple tasks, and several calculations use integer intermediates. This source snapshot is a reference, not a validated claim of exact numerical reproduction.
-- No new simulation result is published here. The explainer labels the paper's reported 11.7% cost reduction and 8.2% energy reduction as paper results.
-
-## Browser explainer
-
-The static site uses a separate JavaScript illustration of the paper's cost equations. It is **not** the C++ simulator and does not execute Google trace jobs in the browser. Weekly temperatures and prices in `data/` were transcribed from the paper; Iowa uses the documented MISO West 2013 average of $31.81/MWh because the plotted series appears to duplicate its temperature line. See `data/weekly_price_usd_mwh.csv` for both series.
+For a prepared normalized task trace (schema in `MODEL.md`):
 
 ```bash
-python3 -m http.server 4175
+python3 -m simulator.run --trace your-trace.json --full-capacity \
+  --seconds 432000 --all-months --output results/your-run.json
+```
+
+This selects five days and Table IV node capacities. Pass `--settings settings.json` to override power constants, supply temperature or time intervals; the complete settings and input fingerprint are recorded in every result. Actual successful Google jobs, accurate task requests, runtime estimates trained only on historical data, and original hourly prices/weather must be supplied to make a stronger reproduction comparison. No download or expensive full experiment starts automatically.
+
+## Browser model
+
+```bash
 npm test
 ```
 
-The original source can be inspected independently of the interactive illustration. For reproduction, first align workload duration, input mapping, admission behavior and energy accounting with the specific experiment being compared.
+The browser prices a single hypothetical job using the paper's incremental-cost equations and lets you choose latency class, origin and site availability. It is an explanatory model, separate from the task-level Python simulator. The year chart uses the weekly figure-derived CSVs in `data/`. The site presents paper results separately from generated synthetic demo results.
+
+## Original reference source
+
+`original/` retains Anirudh Jayakumar's cost-aware `util` branch at commit `44a629e3fd173c71fe0f1d285d79d354bfd772bb`, with original author headers. [Upstream](https://bitbucket.org/anirudhnair/geosched/src/util/). It is not used by the new engine. Its one-day defaults and historical implementation quirks differ from the published settings. `bash build-original.sh` builds it explicitly with `GEO`; run from `original/src/GeoSim`.
+
+## Result integrity
+
+The paper reports 11.7% lower cost and 8.2% less energy. Those values are **not** targets to tune this implementation toward. New results are published with their inputs, settings and unfinished-work counts. See `MODEL.md` for every assumption and known limitation.

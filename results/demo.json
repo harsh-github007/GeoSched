@@ -1,0 +1,1284 @@
+{
+  "trace_sha256": "4731abc89a593f9436a70265d1f7e8991a4a18e882794508800567209a21ebdb",
+  "input_jobs": 500,
+  "settings": {
+    "static_w_per_core": 6.25,
+    "dynamic_w_per_core": 12.5,
+    "cores_per_normalized_cpu": 64,
+    "supply_c": 20,
+    "step_s": 5,
+    "share_s": 300
+  },
+  "demo_seed": 17,
+  "source": "synthetic demonstration, not Google data",
+  "capacity": "8 identical nodes per site (demonstration)",
+  "assumptions": "See MODEL.md; no numerical reproduction claim",
+  "experiments": [
+    {
+      "start": "2013-01-15T00:00:00",
+      "runs": {
+        "local": {
+          "scheduler": "local",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 214.0,
+              "cpu_seconds": 3971.25,
+              "it_j": 12218940.0,
+              "cooling_j": 610947.0000000001,
+              "cost_usd": 0.11336630707499863,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12829887.0,
+              "utilization_pct": 13.7890625
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 184.0,
+              "cpu_seconds": 3277.5,
+              "it_j": 12096840.0,
+              "cooling_j": 1088715.6,
+              "cost_usd": 0.10881746024333235,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13185555.6,
+              "utilization_pct": 11.380208333333334
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 207.0,
+              "cpu_seconds": 3581.25,
+              "it_j": 12150300.0,
+              "cooling_j": 3804101.4402003996,
+              "cost_usd": 0.6120728841405693,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15954401.4402004,
+              "utilization_pct": 12.434895833333334
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 200.0,
+              "cpu_seconds": 3562.5,
+              "it_j": 12147000.0,
+              "cooling_j": 3803068.252974355,
+              "cost_usd": 0.3256472268315569,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15950068.252974356,
+              "utilization_pct": 12.369791666666666
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 211.0,
+              "cpu_seconds": 3120.0,
+              "it_j": 12069120.0,
+              "cooling_j": 1086220.8000000012,
+              "cost_usd": 0.1890349387733326,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13155340.8,
+              "utilization_pct": 10.833333333333334
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        },
+        "geosched": {
+          "scheduler": "geosched",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 70,
+              "completed": 70,
+              "moved": 19,
+              "rejected": 0,
+              "wait_s": 154.0,
+              "cpu_seconds": 3022.5,
+              "it_j": 12051960.0,
+              "cooling_j": 602598.0000000001,
+              "cost_usd": 0.1118170805499988,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12654558.0,
+              "utilization_pct": 10.494791666666666
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 301,
+              "completed": 301,
+              "moved": 205,
+              "rejected": 0,
+              "wait_s": 1055.0,
+              "cpu_seconds": 10177.5,
+              "it_j": 13311240.0,
+              "cooling_j": 1198011.5999999994,
+              "cost_usd": 0.1197416291766656,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14509251.6,
+              "utilization_pct": 35.338541666666664
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 45,
+              "completed": 45,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 99.0,
+              "cpu_seconds": 1410.0,
+              "it_j": 11768160.0,
+              "cooling_j": 3684458.3594239433,
+              "cost_usd": 0.5928225337833356,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15452618.359423943,
+              "utilization_pct": 4.895833333333333
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 83.0,
+              "cpu_seconds": 1395.0,
+              "it_j": 11765520.0,
+              "cooling_j": 3683631.809643106,
+              "cost_usd": 0.31542018278021156,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15449151.809643107,
+              "utilization_pct": 4.84375
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 95.0,
+              "cpu_seconds": 1507.5,
+              "it_j": 11785320.0,
+              "cooling_j": 1060678.8000000005,
+              "cost_usd": 0.1845898660899993,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12845998.8,
+              "utilization_pct": 5.234375
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        }
+      },
+      "totals": {
+        "local": {
+          "cost_usd": 1.3489388170637897,
+          "energy_j": 71075253.09317476,
+          "completed": 500
+        },
+        "geosched": {
+          "cost_usd": 1.3243912923802108,
+          "energy_j": 70911578.56906705,
+          "completed": 500
+        }
+      }
+    },
+    {
+      "start": "2013-03-15T00:00:00",
+      "runs": {
+        "local": {
+          "scheduler": "local",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 214.0,
+              "cpu_seconds": 3971.25,
+              "it_j": 12218940.0,
+              "cooling_j": 1099704.6000000003,
+              "cost_usd": 0.11768502353499974,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13318644.6,
+              "utilization_pct": 13.7890625
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 184.0,
+              "cpu_seconds": 3277.5,
+              "it_j": 12096840.0,
+              "cooling_j": 1088715.6,
+              "cost_usd": 0.11196734297000031,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13185555.6,
+              "utilization_pct": 11.380208333333334
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 207.0,
+              "cpu_seconds": 3581.25,
+              "it_j": 12150300.0,
+              "cooling_j": 3804101.4402003996,
+              "cost_usd": 0.5322565591577891,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15954401.4402004,
+              "utilization_pct": 12.434895833333334
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 200.0,
+              "cpu_seconds": 3562.5,
+              "it_j": 12147000.0,
+              "cooling_j": 1214700.0000000002,
+              "cost_usd": 0.2728013749999967,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13361700.0,
+              "utilization_pct": 12.369791666666666
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 211.0,
+              "cpu_seconds": 3120.0,
+              "it_j": 12069120.0,
+              "cooling_j": 1086220.8000000012,
+              "cost_usd": 0.1910447825066648,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13155340.8,
+              "utilization_pct": 10.833333333333334
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        },
+        "geosched": {
+          "scheduler": "geosched",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 70,
+              "completed": 70,
+              "moved": 19,
+              "rejected": 0,
+              "wait_s": 154.0,
+              "cpu_seconds": 3022.5,
+              "it_j": 12051960.0,
+              "cooling_j": 1084676.399999999,
+              "cost_usd": 0.11607677885666634,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13136636.399999999,
+              "utilization_pct": 10.494791666666666
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 301,
+              "completed": 301,
+              "moved": 205,
+              "rejected": 0,
+              "wait_s": 1055.0,
+              "cpu_seconds": 10177.5,
+              "it_j": 13311240.0,
+              "cooling_j": 1198011.5999999994,
+              "cost_usd": 0.12320772817000024,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14509251.6,
+              "utilization_pct": 35.338541666666664
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 45,
+              "completed": 45,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 99.0,
+              "cpu_seconds": 1410.0,
+              "it_j": 11768160.0,
+              "cooling_j": 3684458.3594239433,
+              "cost_usd": 0.5155165180463299,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15452618.359423943,
+              "utilization_pct": 4.895833333333333
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 83.0,
+              "cpu_seconds": 1395.0,
+              "it_j": 11765520.0,
+              "cooling_j": 1176552.0000000002,
+              "cost_usd": 0.2642339699999962,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12942072.0,
+              "utilization_pct": 4.84375
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 95.0,
+              "cpu_seconds": 1507.5,
+              "it_j": 11785320.0,
+              "cooling_j": 1060678.8000000005,
+              "cost_usd": 0.1865524492399987,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12845998.8,
+              "utilization_pct": 5.234375
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        }
+      },
+      "totals": {
+        "local": {
+          "cost_usd": 1.2257550831694506,
+          "energy_j": 68975642.4402004,
+          "completed": 500
+        },
+        "geosched": {
+          "cost_usd": 1.2055874443129913,
+          "energy_j": 68886577.15942395,
+          "completed": 500
+        }
+      }
+    },
+    {
+      "start": "2013-05-15T00:00:00",
+      "runs": {
+        "local": {
+          "scheduler": "local",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 214.0,
+              "cpu_seconds": 3971.25,
+              "it_j": 12218940.0,
+              "cooling_j": 2077219.8000000014,
+              "cost_usd": 0.12632245645500115,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14296159.8,
+              "utilization_pct": 13.7890625
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 184.0,
+              "cpu_seconds": 3277.5,
+              "it_j": 12096840.0,
+              "cooling_j": 1209684.0000000002,
+              "cost_usd": 0.11776273740000177,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13306524.0,
+              "utilization_pct": 11.380208333333334
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 207.0,
+              "cpu_seconds": 3581.25,
+              "it_j": 12150300.0,
+              "cooling_j": 3804101.4402003996,
+              "cost_usd": 0.5824686059126475,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15954401.4402004,
+              "utilization_pct": 12.434895833333334
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 200.0,
+              "cpu_seconds": 3562.5,
+              "it_j": 12147000.0,
+              "cooling_j": 1214700.0000000002,
+              "cost_usd": 0.2728013749999967,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13361700.0,
+              "utilization_pct": 12.369791666666666
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 211.0,
+              "cpu_seconds": 3120.0,
+              "it_j": 12069120.0,
+              "cooling_j": 1086220.8000000012,
+              "cost_usd": 0.14492800448000104,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13155340.8,
+              "utilization_pct": 10.833333333333334
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        },
+        "geosched": {
+          "scheduler": "geosched",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 70,
+              "completed": 70,
+              "moved": 19,
+              "rejected": 0,
+              "wait_s": 154.0,
+              "cpu_seconds": 3022.5,
+              "it_j": 12051960.0,
+              "cooling_j": 2048833.2000000018,
+              "cost_usd": 0.12459617547000136,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14100793.200000001,
+              "utilization_pct": 10.494791666666666
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 301,
+              "completed": 301,
+              "moved": 205,
+              "rejected": 0,
+              "wait_s": 1055.0,
+              "cpu_seconds": 10177.5,
+              "it_j": 13311240.0,
+              "cooling_j": 1331124.0000000002,
+              "cost_usd": 0.12958492140000144,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14642364.0,
+              "utilization_pct": 35.338541666666664
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 45,
+              "completed": 45,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 99.0,
+              "cpu_seconds": 1410.0,
+              "it_j": 11768160.0,
+              "cooling_j": 3684458.3594239433,
+              "cost_usd": 0.5641493419386341,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15452618.359423943,
+              "utilization_pct": 4.895833333333333
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 83.0,
+              "cpu_seconds": 1395.0,
+              "it_j": 11765520.0,
+              "cooling_j": 1176552.0000000002,
+              "cost_usd": 0.2642339699999962,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12942072.0,
+              "utilization_pct": 4.84375
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 95.0,
+              "cpu_seconds": 1507.5,
+              "it_j": 11785320.0,
+              "cooling_j": 1060678.8000000005,
+              "cost_usd": 0.14152008678000058,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12845998.8,
+              "utilization_pct": 5.234375
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        }
+      },
+      "totals": {
+        "local": {
+          "cost_usd": 1.244283179247648,
+          "energy_j": 70074126.0402004,
+          "completed": 500
+        },
+        "geosched": {
+          "cost_usd": 1.2240844955886336,
+          "energy_j": 69983846.35942395,
+          "completed": 500
+        }
+      }
+    },
+    {
+      "start": "2013-07-15T00:00:00",
+      "runs": {
+        "local": {
+          "scheduler": "local",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 214.0,
+              "cpu_seconds": 3971.25,
+              "it_j": 12218940.0,
+              "cooling_j": 3825591.7345022187,
+              "cost_usd": 0.14177126513180896,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 16044531.734502219,
+              "utilization_pct": 13.7890625
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 184.0,
+              "cpu_seconds": 3277.5,
+              "it_j": 12096840.0,
+              "cooling_j": 3787363.8071384095,
+              "cost_usd": 0.18783071001941415,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15884203.80713841,
+              "utilization_pct": 11.380208333333334
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 207.0,
+              "cpu_seconds": 3581.25,
+              "it_j": 12150300.0,
+              "cooling_j": 3804101.4402003996,
+              "cost_usd": 0.5204237114229859,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15954401.4402004,
+              "utilization_pct": 12.434895833333334
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 200.0,
+              "cpu_seconds": 3562.5,
+              "it_j": 12147000.0,
+              "cooling_j": 1214700.0000000002,
+              "cost_usd": 0.2546146166666687,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13361700.0,
+              "utilization_pct": 12.369791666666666
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 211.0,
+              "cpu_seconds": 3120.0,
+              "it_j": 12069120.0,
+              "cooling_j": 2051750.3999999969,
+              "cost_usd": 0.16129171968000017,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14120870.399999997,
+              "utilization_pct": 10.833333333333334
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        },
+        "geosched": {
+          "scheduler": "geosched",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 315,
+              "completed": 315,
+              "moved": 215,
+              "rejected": 0,
+              "wait_s": 786.0,
+              "cpu_seconds": 11325.0,
+              "it_j": 13513200.0,
+              "cooling_j": 4230807.764558572,
+              "cost_usd": 0.15678802416405815,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 17744007.764558572,
+              "utilization_pct": 39.322916666666664
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 56,
+              "completed": 56,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 103.0,
+              "cpu_seconds": 1875.0,
+              "it_j": 11850000.0,
+              "cooling_j": 3710081.402629955,
+              "cost_usd": 0.18399796258610165,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15560081.402629955,
+              "utilization_pct": 6.510416666666667
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 45,
+              "completed": 45,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 99.0,
+              "cpu_seconds": 1410.0,
+              "it_j": 11768160.0,
+              "cooling_j": 3684458.3594239433,
+              "cost_usd": 0.5040558260964366,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15452618.359423943,
+              "utilization_pct": 4.895833333333333
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 83.0,
+              "cpu_seconds": 1395.0,
+              "it_j": 11765520.0,
+              "cooling_j": 1176552.0000000002,
+              "cost_usd": 0.24661837200000222,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12942072.0,
+              "utilization_pct": 4.84375
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 95.0,
+              "cpu_seconds": 1507.5,
+              "it_j": 11785320.0,
+              "cooling_j": 2003504.399999999,
+              "cost_usd": 0.15749901648000048,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13788824.399999999,
+              "utilization_pct": 5.234375
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        }
+      },
+      "totals": {
+        "local": {
+          "cost_usd": 1.265932022920878,
+          "energy_j": 75365707.38184102,
+          "completed": 500
+        },
+        "geosched": {
+          "cost_usd": 1.248959201326599,
+          "energy_j": 75487603.92661247,
+          "completed": 500
+        }
+      }
+    },
+    {
+      "start": "2013-09-15T00:00:00",
+      "runs": {
+        "local": {
+          "scheduler": "local",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 214.0,
+              "cpu_seconds": 3971.25,
+              "it_j": 12218940.0,
+              "cooling_j": 3825591.7345022187,
+              "cost_usd": 0.14177126513180896,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 16044531.734502219,
+              "utilization_pct": 13.7890625
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 184.0,
+              "cpu_seconds": 3277.5,
+              "it_j": 12096840.0,
+              "cooling_j": 2056462.8000000003,
+              "cost_usd": 0.1482558468300001,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14153302.8,
+              "utilization_pct": 11.380208333333334
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 207.0,
+              "cpu_seconds": 3581.25,
+              "it_j": 12150300.0,
+              "cooling_j": 3804101.4402003996,
+              "cost_usd": 0.529553174469323,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15954401.4402004,
+              "utilization_pct": 12.434895833333334
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 200.0,
+              "cpu_seconds": 3562.5,
+              "it_j": 12147000.0,
+              "cooling_j": 1214700.0000000002,
+              "cost_usd": 0.2546146166666687,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13361700.0,
+              "utilization_pct": 12.369791666666666
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 211.0,
+              "cpu_seconds": 3120.0,
+              "it_j": 12069120.0,
+              "cooling_j": 1206912.0000000002,
+              "cost_usd": 0.22709390293333426,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13276032.0,
+              "utilization_pct": 10.833333333333334
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        },
+        "geosched": {
+          "scheduler": "geosched",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 315,
+              "completed": 315,
+              "moved": 215,
+              "rejected": 0,
+              "wait_s": 786.0,
+              "cpu_seconds": 11325.0,
+              "it_j": 13513200.0,
+              "cooling_j": 4230807.764558572,
+              "cost_usd": 0.15678802416405815,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 17744007.764558572,
+              "utilization_pct": 39.322916666666664
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 56,
+              "completed": 56,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 103.0,
+              "cpu_seconds": 1875.0,
+              "it_j": 11850000.0,
+              "cooling_j": 2014500.000000001,
+              "cost_usd": 0.14523063749999982,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13864500.0,
+              "utilization_pct": 6.510416666666667
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 45,
+              "completed": 45,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 99.0,
+              "cpu_seconds": 1410.0,
+              "it_j": 11768160.0,
+              "cooling_j": 3684458.3594239433,
+              "cost_usd": 0.51289815771322,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15452618.359423943,
+              "utilization_pct": 4.895833333333333
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 83.0,
+              "cpu_seconds": 1395.0,
+              "it_j": 11765520.0,
+              "cooling_j": 1176552.0000000002,
+              "cost_usd": 0.24661837200000222,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12942072.0,
+              "utilization_pct": 4.84375
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 95.0,
+              "cpu_seconds": 1507.5,
+              "it_j": 11785320.0,
+              "cooling_j": 1178532.0000000002,
+              "cost_usd": 0.221753890600001,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12963852.0,
+              "utilization_pct": 5.234375
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        }
+      },
+      "totals": {
+        "local": {
+          "cost_usd": 1.3012888060311352,
+          "energy_j": 72789967.97470263,
+          "completed": 500
+        },
+        "geosched": {
+          "cost_usd": 1.283289081977281,
+          "energy_j": 72967050.12398252,
+          "completed": 500
+        }
+      }
+    },
+    {
+      "start": "2013-11-15T00:00:00",
+      "runs": {
+        "local": {
+          "scheduler": "local",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 214.0,
+              "cpu_seconds": 3971.25,
+              "it_j": 12218940.0,
+              "cooling_j": 1099704.6000000003,
+              "cost_usd": 0.11768502353499974,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13318644.6,
+              "utilization_pct": 13.7890625
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 184.0,
+              "cpu_seconds": 3277.5,
+              "it_j": 12096840.0,
+              "cooling_j": 1088715.6,
+              "cost_usd": 0.12610518869666743,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13185555.6,
+              "utilization_pct": 11.380208333333334
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 207.0,
+              "cpu_seconds": 3581.25,
+              "it_j": 12150300.0,
+              "cooling_j": 3804101.4402003996,
+              "cost_usd": 0.5007022985316237,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15954401.4402004,
+              "utilization_pct": 12.434895833333334
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 200.0,
+              "cpu_seconds": 3562.5,
+              "it_j": 12147000.0,
+              "cooling_j": 2064989.9999999998,
+              "cost_usd": 0.2968726800000034,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14211990.0,
+              "utilization_pct": 12.369791666666666
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 100,
+              "completed": 100,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 211.0,
+              "cpu_seconds": 3120.0,
+              "it_j": 12069120.0,
+              "cooling_j": 1086220.8000000012,
+              "cost_usd": 0.15201727146666558,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13155340.8,
+              "utilization_pct": 10.833333333333334
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        },
+        "geosched": {
+          "scheduler": "geosched",
+          "horizon_s": 3600,
+          "settings": {
+            "static_w_per_core": 6.25,
+            "dynamic_w_per_core": 12.5,
+            "cores_per_normalized_cpu": 64,
+            "supply_c": 20,
+            "step_s": 5,
+            "share_s": 300
+          },
+          "sites": {
+            "Iowa": {
+              "arrived": 100,
+              "started": 315,
+              "completed": 315,
+              "moved": 215,
+              "rejected": 0,
+              "wait_s": 786.0,
+              "cpu_seconds": 11325.0,
+              "it_j": 13513200.0,
+              "cooling_j": 1216188.0000000019,
+              "cost_usd": 0.13015050896666638,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 14729388.000000002,
+              "utilization_pct": 39.322916666666664
+            },
+            "Oregon": {
+              "arrived": 100,
+              "started": 56,
+              "completed": 56,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 103.0,
+              "cpu_seconds": 1875.0,
+              "it_j": 11850000.0,
+              "cooling_j": 1066499.9999999998,
+              "cost_usd": 0.1235319708333341,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12916500.0,
+              "utilization_pct": 6.510416666666667
+            },
+            "Singapore": {
+              "arrived": 100,
+              "started": 45,
+              "completed": 45,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 99.0,
+              "cpu_seconds": 1410.0,
+              "it_j": 11768160.0,
+              "cooling_j": 3684458.3594239433,
+              "cost_usd": 0.4849546728465891,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 15452618.359423943,
+              "utilization_pct": 4.895833333333333
+            },
+            "Chile": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 83.0,
+              "cpu_seconds": 1395.0,
+              "it_j": 11765520.0,
+              "cooling_j": 2000138.4,
+              "cost_usd": 0.28754930880000307,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 13765658.4,
+              "utilization_pct": 4.84375
+            },
+            "Finland": {
+              "arrived": 100,
+              "started": 42,
+              "completed": 42,
+              "moved": 0,
+              "rejected": 0,
+              "wait_s": 95.0,
+              "cpu_seconds": 1507.5,
+              "it_j": 11785320.0,
+              "cooling_j": 1060678.8000000005,
+              "cost_usd": 0.14844265279999863,
+              "queued": 0,
+              "running": 0,
+              "energy_j": 12845998.8,
+              "utilization_pct": 5.234375
+            }
+          },
+          "input_jobs": 500,
+          "arrived_jobs": 500,
+          "not_arrived": 0
+        }
+      },
+      "totals": {
+        "local": {
+          "cost_usd": 1.19338246222996,
+          "energy_j": 69825932.4402004,
+          "completed": 500
+        },
+        "geosched": {
+          "cost_usd": 1.1746291142465912,
+          "energy_j": 69710163.55942394,
+          "completed": 500
+        }
+      }
+    }
+  ]
+}

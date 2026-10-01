@@ -5,7 +5,7 @@
     target.replaceChildren(...[...source.querySelectorAll('.site')].map((site, index) => {
       const row = document.createElement('div'); row.className = 'route-row';
       const name = document.createElement('span'); name.textContent = site.querySelector('.site-top b').textContent;
-      const detail = document.createElement('small'); detail.textContent = index === 0 ? 'Lowest modeled cost · batch job destination' : site.querySelector('.site-meta span').textContent;
+      const detail = document.createElement('small'); detail.textContent = index === 0 ? 'Lowest price before placement constraints' : site.querySelector('.site-meta span').textContent;
       name.append(detail); const cost = document.createElement('b'); cost.textContent = site.querySelector('.site-cost').textContent;
       row.append(name, cost); return row;
     }));
