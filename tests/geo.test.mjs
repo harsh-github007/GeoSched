@@ -27,3 +27,9 @@ test('job cost scales with hours', () => {
   const r = week(temp, price, 0), a = jobCost(r, 64, 0.5, 1), b = jobCost(r, 64, 0.5, 2);
   assert.ok(Math.abs(b[0].cost - 2 * a[0].cost) < 1e-12);
 });
+
+test('incremental cost excludes idle power and has correct MWh units', () => {
+  const profile=[{dc:'example',effective:105,overhead:.05}];
+  assert.equal(jobCost(profile,64,0,1)[0].cost,0);
+  assert.ok(Math.abs(jobCost(profile,64,1,1)[0].cost-.084)<1e-12);
+});

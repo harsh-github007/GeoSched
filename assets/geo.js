@@ -1,4 +1,5 @@
-// The GeoSched cost model in JavaScript; mirrors geosched/model.py.
+// Paper-informed illustration. Incremental job pricing follows Eq. 9–10.
+// Whole-site idle power is accounted in simulator/engine.py, not added to each job.
 export const DCS = ['Iowa', 'Oregon', 'Singapore', 'Chile', 'Finland'];
 export const PUE = [[25, 1.05], [35, 1.07], [50, 1.09], [60, 1.10], [65, 1.17]];
 export const T_SUPPLY_C = 20, ECON_MAX_F = 65, P_STATIC = 6.25, P_DYNAMIC = 12.5, CORES_PER_NODE = 64;
@@ -27,6 +28,6 @@ export function week(temp, price, w) {
 
 // Cost in dollars of a job (cores, utilisation 0-1, hours) at each data center in week w.
 export function jobCost(rows, cores, util, hours) {
-  const kw = cores * (P_STATIC + P_DYNAMIC * util) / 1000;
+  const kw = cores * P_DYNAMIC * util / 1000;
   return rows.map(r => ({ ...r, kwh: kw * hours * (1 + r.overhead), cost: kw * hours / 1000 * r.effective }));
 }

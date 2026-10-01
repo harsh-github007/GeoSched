@@ -26,7 +26,7 @@
     <div class="wrap">
       <a class="brand" href="#top"><i></i>GeoSched, explained</a>
       <div class="links">
-        <a href="#playground">Place a job</a><a href="#how">The model</a><a href="#results">Paper & source</a>
+        <a href="#playground">Place a job</a><a href="#how">How it works</a><a href="#results">Paper & experiments</a>
       </div>
       <a class="cta" href="https://ieeexplore.ieee.org/document/10307394">Read the paper</a>
     </div>
@@ -36,14 +36,14 @@
     <div class="wrap">
       <span class="label">DISTRIBUTED SYSTEMS · IEEE 2023</span>
       <h1>One workload.<br>Five places.<br><em>A smarter choice.</em></h1>
-      <p class="lede">Electricity prices change. Cooling costs change. GeoSched sends flexible jobs to the data center where the two add up to less.</p><p class="byline">Vishnuvajjhula Pranav Sai & Harsh Raj <span>Interactive explainer · Original C++ simulator</span></p>
+      <p class="lede">Electricity prices change. Cooling costs change. GeoSched sends flexible jobs to the data center where the two add up to less.</p><p class="byline">Vishnuvajjhula Pranav Sai & Harsh Raj <span>Paper-informed implementation · Interactive research studio</span></p>
       <div class="hero-links">
         <a class="btn primary" href="#playground">Place a job →</a>
         <a class="btn" href="https://ieeexplore.ieee.org/document/10307394">Paper on IEEE Xplore</a>
         <a class="btn" href="https://github.com/harsh-github007/GeoSched">Code on GitHub</a>
       </div>
-      <aside class="routing-preview"><div class="routing-title"><span class="label">A FLEXIBLE JOB, PRICED AT FIVE SITES</span><span>Week of 15 Jan 2013</span></div><div class="job-ticket"><span>128 cores</span><span>25% utilisation</span><span>12 hours</span></div><div id="heroSites" aria-live="polite">Loading site costs…</div><p>Compute + cooling × local electricity price</p><a href="#playground">Change the week or workload ↗</a></aside>
-      <div class="trace-strip"><span><b>C++</b> original GeoSim implementation</span><span><b>5</b> geographically distributed sites</span><span><b>2015</b> upstream simulator source</span><a href="#results">Inspect paper & source ↗</a></div>
+      <aside class="routing-preview"><div class="routing-title"><span class="label">ONE JOB, FIVE INCREMENTAL COSTS</span><span>Week of 15 Jan 2013</span></div><div class="job-ticket"><span>128 cores</span><span>25% utilisation</span><span>12 hours</span></div><div id="heroSites" aria-live="polite">Loading site costs…</div><p>Dynamic compute + its cooling × electricity price</p><a href="#playground">Change the week or workload ↗</a></aside>
+      <div class="trace-strip"><span><b>5 sec</b> simulation time step</span><span><b>5</b> geographically distributed sites</span><span><b>5 min</b> resource sharing interval</span><a href="#results">Inspect paper & source ↗</a></div>
 
     </div>
   </header>
@@ -65,7 +65,7 @@
       <div class="wrap">
         <div class="head"><span class="label">Playground</span>
           <div><h2>Pick a week and a job. See where it goes.</h2>
-            <p class="intro">This browser illustration uses weekly temperature and power-price data transcribed from the paper; it does not run the C++ simulator. The cost includes cooling: <b>outside air</b> below 65°F (Table V), <b>chillers</b> above it (Eq. 7).</p></div></div>
+            <p class="intro">This one-job illustration uses the paper’s incremental-cost equations and weekly figure-derived profiles. Availability is a simplified toggle; the Python simulator checks individual tasks against machine CPU and memory. The cost includes cooling: <b>outside air</b> below 65°F (Table V), <b>chillers</b> above it (Eq. 7).</p></div></div>
         <div class="panel">
           <div class="inputs">
             <label>Week of 2013 = <span class="val" id="wVal"></span><input id="w" type="range" min="0" max="52" step="1" value="2"></label>
@@ -73,6 +73,7 @@
             <label>CPU utilisation = <span class="val" id="uVal"></span><input id="u" type="range" min="5" max="100" step="5" value="25"></label>
             <label>Running time = <span class="val" id="hVal"></span><input id="h" type="range" min="1" max="72" step="1" value="12"></label>
           </div>
+          <div class="policy-controls"><label>Workload class<select id="jobClass"><option value="0">Batch · may move</option><option value="2">Latency-sensitive · stays local</option></select></label><label>Arrival site<select id="origin"><option >Iowa</option><option >Oregon</option><option selected>Singapore</option><option >Chile</option><option >Finland</option></select></label></div><fieldset class="availability"><legend>Shared availability · uncheck a site to exclude it from placement</legend><label><input type="checkbox" class="siteAvailable" value="Iowa" checked>Iowa</label><label><input type="checkbox" class="siteAvailable" value="Oregon" checked>Oregon</label><label><input type="checkbox" class="siteAvailable" value="Singapore" checked>Singapore</label><label><input type="checkbox" class="siteAvailable" value="Chile" checked>Chile</label><label><input type="checkbox" class="siteAvailable" value="Finland" checked>Finland</label></fieldset>
           <div id="sites" class="sites"></div>
           <p class="result" id="siteNote"></p>
         </div>
@@ -101,9 +102,9 @@
         <div class="head"><span class="label">How it works</span>
           <div><h2>Three steps for every job.</h2></div></div>
         <div class="grid3">
-          <div class="card3"><span class="num">01</span><h3>Profile every site</h3><p>Each data center keeps its temperature and power price. Every five minutes the sites also share how busy they are.</p></div>
-          <div class="card3"><span class="num">02</span><h3>Price the job everywhere</h3><p>For each site: the job's power, times one plus that site's cooling overhead, times its run time, times the local power price (Eqs. 9–10).</p></div>
-          <div class="card3 hi"><span class="num">03</span><h3>Send it to the cheapest</h3><p>Batch jobs (classes 0–1) go to the cheapest site with room for them. Latency-sensitive jobs (classes 2–3) stay local, so users don't wait.</p></div>
+          <div class="card3"><span class="num">01</span><h3>Profile every site</h3><p>At five-second ticks, jobs arrive and complete. Every five minutes, sites publish snapshots of the CPU and memory available on each machine.</p></div>
+          <div class="card3"><span class="num">02</span><h3>Price the job everywhere</h3><p>Use predicted duration to price the extra compute power and cooling at each feasible site (Eqs. 9–10). Whole-site energy also counts idle power once.</p></div>
+          <div class="card3 hi"><span class="num">03</span><h3>Send it to the cheapest</h3><p>Classes 0–1 choose the cheapest feasible snapshot. Classes 2–3 stay local. Reserve every task atomically; stale availability can cause queuing. The model does not guarantee an SLA.</p></div>
         </div>
       </div>
     </section>
@@ -114,15 +115,16 @@
           <div><h2>GeoSched against running every job locally.</h2>
             <p class="intro">The paper compares GeoSched with <b>DumbSched</b>, which runs every job where it arrives. Six 5-day simulations, starting on the 15th of January, March, May, July, September and November.</p></div></div>
         <div class="pair"><div class="card"><span class="cap">Paper · reported operating cost</span><div class="big">−11.7%</div><p class="muted small">The published study compares GeoSched with running jobs locally.</p></div><div class="card good"><span class="cap">Paper · reported energy</span><div class="big">−8.2%</div><p class="muted small">These are reported paper values, not a new run of the source below.</p></div></div>
-        <div class="panel" id="rerun"><span class="label">ORIGINAL SOURCE · COST-AWARE UTIL BRANCH</span><h3>Explore the implementation behind GeoSim.</h3><p class="intro">This repository now includes the original C++ source from Anirudh Jayakumar’s GeoSched repository. The cost-aware code is on the <code>util</code> branch; <code>master</code> uses random placement.</p><div class="evidence-note"><b>No fresh reproduction results are claimed.</b><p>The upstream snapshot defaults to one-day workloads and includes separate GeoSched and cooling-load-balancer build modes. Its settings differ from the six five-day experiments described in the 2023 paper. The former Python reimplementation and its result tables have been removed.</p></div><div class="hero-links"><a class="btn primary" href="https://github.com/harsh-github007/GeoSched/tree/main/original">Browse original C++ source ↗</a><a class="btn" href="https://bitbucket.org/anirudhnair/geosched/src/util/">View upstream branch ↗</a><a class="btn" href="https://github.com/harsh-github007/GeoSched/blob/main/README.md">Build instructions</a></div></div>
+        <div class="panel" id="rerun"><span class="label">NEW IMPLEMENTATION · SYNTHETIC DEMONSTRATION</span><h3>Same workload. Different placement.</h3><p class="intro">Compare local placement with GeoSched using the new task-level simulator. This small example uses 500 synthetic jobs, eight machines per site and one-hour windows. It is not a Google-trace reproduction.</p><div class="chips" id="demoMonths" aria-label="Demonstration month"></div><div id="demoStatus" role="status">Loading the saved demonstration…</div><div class="table-scroll"><table class="demo-table"><thead><tr><th>Site</th><th>Local cost</th><th>GeoSched cost</th><th>Local energy</th><th>GeoSched energy</th><th>GeoSched completed</th></tr></thead><tbody id="demoRows"></tbody></table></div><div class="evidence-note" id="demoAccounting"></div><div class="evidence-note"><b>What this example can establish</b><p>It demonstrates scheduling and accounting under documented assumptions. It cannot validate the paper’s reported savings. Costs include idle power; all queues, running jobs and rejections are reported. No constants were tuned to match 11.7%.</p></div><div class="hero-links"><a class="btn primary" href="results/demo.json" download>Download experiment data</a><a class="btn" href="https://github.com/harsh-github007/GeoSched/tree/main/simulator">Inspect the new engine ↗</a></div></div>
+        <div class="model-doc"><h3>Follow the experiment from input to result.</h3><details><summary>1. Prepare a trace</summary><p>Provide successful jobs with arrival time, actual duration, an independently estimated duration, scheduling class and each task’s CPU/memory requests. Keep Google’s failed and killed jobs out. The bundled upstream one-day aggregate traces cannot recover individual task sizes without an extra approximation.</p></details><details><summary>2. Match the paper’s experiment</summary><p>Five sites use Table IV’s heterogeneous machine configurations. Use five-day windows starting at midnight on January 15, March 15, May 15, July 15, September 15 and November 15. Resource state is shared every 300 seconds, with five-second simulation steps.</p></details><details><summary>3. Inspect assumptions</summary><p>The paper omits some constants and policies. Default power constants, 20°C supply air, FIFO queues, first-fit packing and weekly profiles are declared assumptions. The runtime prediction is supplied as an input; the demo uses a fixed estimate. Data-transfer cost, node shutdown and enforceable SLA deadlines are excluded.</p></details><details><summary>4. Check comparable work</summary><p>Compare identical input jobs. Check completed, queued, running and rejected counts before interpreting savings. Integrate static and dynamic IT power plus cooling over the same observation window. Jobs continuing beyond that window remain marked running.</p></details><div class="hero-links"><a class="btn" href="https://github.com/harsh-github007/GeoSched/blob/main/MODEL.md">Equations, assumptions & trace schema ↗</a><a class="btn" href="https://github.com/harsh-github007/GeoSched/blob/main/README.md">Run locally ↗</a><a class="btn" href="https://bitbucket.org/anirudhnair/geosched/src/util/">Historical reference implementation ↗</a></div></div>
       </div>
     </section>
 
     <section class="block">
       <div class="wrap">
         <div class="head"><span class="label">Why it matters</span><div></div></div>
-        <p class="quote">This model leaves data-transfer costs out. <em>Where</em> it runs decides what it costs, and the answer changes every season.</p>
-        <p class="muted" style="max-width:760px">Limits: the model covers server and cooling power, not the cost of moving data between sites, and it uses weekly averages for price and temperature. The paper names renewable energy, data transfer and richer service-level agreements as next steps.</p>
+        <p class="quote">Location can reduce operating cost. <em>Where</em> it runs decides what it costs, and the answer changes every season.</p>
+        <p class="muted" style="max-width:760px">Limits: the model covers server and cooling power, not the cost of moving data between sites, and it uses weekly averages for price and temperature. The paper names renewable energy, data transfer and richer service-level agreements as next steps. The new simulator makes its own assumptions visible; numerical reproduction remains unverified.</p>
         <div class="hero-links">
           <a class="btn primary" href="https://ieeexplore.ieee.org/document/10307394">Read the paper on IEEE Xplore</a>
           <a class="btn" href="https://github.com/harsh-github007/GeoSched">Run the simulator</a>
@@ -132,7 +134,7 @@
   </main>
 
   <footer class="wrap foot">
-    <span>Vishnuvajjhula Pranav Sai and Harsh Raj · IEEE 2023. Explainer by Harsh Raj. Original GeoSim source by Anirudh Jayakumar.</span>
+    <span>Vishnuvajjhula Pranav Sai and Harsh Raj · IEEE 2023. Independent implementation and explainer by Harsh Raj. Historical source: Anirudh Jayakumar.</span>
     <a href="https://github.com/harsh-github007">github.com/harsh-github007</a>
   </footer>
 
