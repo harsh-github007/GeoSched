@@ -2,7 +2,7 @@
 
 A new independent implementation of the method described in **Reducing Cloud Workload Costs in Geographically Distributed Data Centers with GeoSched**, by Vishnuvajjhula Pranav Sai and Harsh Raj (IEEE, 2023).
 
-[Explainer](https://harsh-github007.github.io/GeoSched/) · [Paper](https://ieeexplore.ieee.org/document/10307394) · [Preprint](paper/preprint.pdf) · [Model specification](MODEL.md)
+[Explainer](https://harsh-github007.github.io/GeoSched/) · [Paper](https://ieeexplore.ieee.org/document/10307394) · [Preprint PDF](https://harsh-github007.github.io/GeoSched/paper/preprint.pdf) · [Model specification](https://raw.githubusercontent.com/harsh-github007/GeoSched/main/MODEL.md)
 
 ## What is implemented
 
