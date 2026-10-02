@@ -29,7 +29,7 @@ python3 -m simulator.run --trace your-trace.json --full-capacity \
   --seconds 432000 --all-months --output results/your-run.json
 ```
 
-This selects five days and Table IV node capacities. Pass `--settings settings.json` to override power constants, supply temperature or time intervals; the complete settings and input fingerprint are recorded in every result. Actual successful Google jobs, accurate task requests, runtime estimates trained only on historical data, and original hourly prices/weather must be supplied to make a stronger reproduction comparison. No download or expensive full experiment starts automatically.
+This selects five days and Table IV node capacities. Pass `--settings settings.json` to override power constants, supply temperature or time intervals; the complete settings and input fingerprint are recorded in every result. This command accepts your own prepared inputs. The committed results remain a synthetic demonstration; no full experiment starts automatically.
 
 ## Browser model
 
@@ -41,7 +41,7 @@ The browser prices a single hypothetical job using the paper's incremental-cost 
 
 ## Original reference source
 
-`original/` retains Anirudh Jayakumar's cost-aware `util` branch at commit `44a629e3fd173c71fe0f1d285d79d354bfd772bb`, with original author headers. [Upstream](https://bitbucket.org/anirudhnair/geosched/src/util/). It is not used by the new engine. Its one-day defaults and historical implementation quirks differ from the published settings. `bash build-original.sh` builds it explicitly with `GEO`; run from `original/src/GeoSim`.
+Anirudh Jayakumar's cost-aware simulator is available [upstream at commit `44a629e3fd173c71fe0f1d285d79d354bfd772bb`](https://bitbucket.org/anirudhnair/geosched/src/44a629e3fd173c71fe0f1d285d79d354bfd772bb/). The new engine does not use that source. It is linked rather than copied into this repository; its one-day defaults and historical implementation choices differ from the published settings.
 
 ## Result integrity
 

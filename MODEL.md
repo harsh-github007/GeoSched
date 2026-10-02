@@ -1,6 +1,6 @@
 # Model specification and provenance
 
-This is a new independent implementation informed by the supplied GeoSched preprint. It is not claimed to reproduce Table VI numerically. The original C++ source is retained under `original/` for reference only; it is not called by the new simulator.
+This is a new independent implementation informed by the supplied GeoSched preprint. It is not claimed to reproduce Table VI numerically. The original C++ source is [linked upstream](https://bitbucket.org/anirudhnair/geosched/src/44a629e3fd173c71fe0f1d285d79d354bfd772bb/) for reference only; it is not called by the new simulator.
 
 ## Paper-defined behavior
 
@@ -47,7 +47,7 @@ JSON array of jobs. CPU/memory are normalized relative to the largest machine, w
 }]
 ```
 
-No Google download occurs automatically. The upstream bundled one-day traces store aggregate requests, not individual task demands. Dividing aggregates equally would be an additional approximation, so they are not silently converted into paper-quality task traces.
+No Google download occurs automatically. The upstream one-day traces store aggregate requests, not individual task demands. Dividing aggregates equally would be an additional approximation, so they are not silently converted into paper-quality task traces.
 
 ## Reporting rules
 
